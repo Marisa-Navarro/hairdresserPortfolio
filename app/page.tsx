@@ -13,10 +13,10 @@ export default function Home() {
       <section className="relative h-screen bg-teal-950 text-white">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/placeholder.svg?height=1080&width=1920"
+            src="https://res.cloudinary.com/deq6qm96r/image/upload/v1749064758/ali-pazani-3w14X-Yxffk-unsplash_pzjktu.jpg"
             alt="Hairstyling background"
             fill
-            className="object-cover opacity-40"
+            className="object-cover opacity-10"
             priority
           />
         </div>
@@ -25,12 +25,12 @@ export default function Home() {
             Styled <span className="italic">for</span> Life
           </h1>
           <p className="text-lg md:text-xl max-w-md mx-auto mb-8">Boutique hairdressing built for you.</p>
-          <Button
+          {/* <Button
             variant="outline"
             className="border-white text-white hover:bg-white hover:text-teal-950 transition-colors"
           >
             <Link href="#portfolio">View Portfolio</Link>
-          </Button>
+          </Button> */}
         </div>
       </section>
 
@@ -58,14 +58,14 @@ export default function Home() {
             </div>
             <div className="grid grid-cols-2 gap-4">
               <Image
-                src="/placeholder.svg?height=600&width=400"
+                src="https://res.cloudinary.com/deq6qm96r/image/upload/v1749065644/IMG_7822_sphigr.png"
                 alt="Hairdresser at work"
                 width={400}
                 height={600}
                 className="rounded-lg object-cover h-full w-full"
               />
               <Image
-                src="/placeholder.svg?height=600&width=400"
+                src="https://res.cloudinary.com/deq6qm96r/image/upload/v1749065643/IMG_7824_j47mo9.jpg"
                 alt="Hairstyle example"
                 width={400}
                 height={600}

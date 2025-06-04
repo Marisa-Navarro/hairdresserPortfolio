@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Scissors } from "lucide-react"
 import { useIsMobile } from "@/hooks/use-mobile"
@@ -29,14 +30,20 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed py-5 top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled ? "bg-white/90 backdrop-blur-md shadow-sm py-2" : "bg-transparent py-4"
       }`}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
-          <Scissors className={`h-6 w-6 ${isScrolled ? "text-teal-950" : "text-white"}`} />
-          <span className={`font-serif text-xl ${isScrolled ? "text-teal-950" : "text-white"}`}>Hairstylist</span>
+          <Image
+            src="https://res.cloudinary.com/deq6qm96r/image/upload/v1749064881/Marisa_Navarro_Logo_jpeg-removebg-preview_doktis.png"
+            alt="Marisa Navarro Logo"
+            width={50}
+            height={10}
+            className="w-[50px] h-auto"
+            priority
+          />
         </Link>
 
         {isMobile ? (
@@ -60,9 +67,9 @@ export function Navbar() {
                 <Link href="#contact" className="text-lg font-medium py-2">
                   Contact
                 </Link>
-                <Link href="/admin" className="text-lg font-medium py-2">
+                {/* <Link href="/admin" className="text-lg font-medium py-2">
                   Admin
-                </Link>
+                </Link> */}
               </nav>
             </SheetContent>
           </Sheet>
@@ -100,14 +107,14 @@ export function Navbar() {
             >
               Contact
             </Link>
-            <Link href="/admin">
+            {/* <Link href="/admin">
               <Button
                 variant={isScrolled ? "default" : "outline"}
                 className={!isScrolled ? "border-white text-white hover:bg-white hover:text-teal-950" : ""}
               >
                 Admin
               </Button>
-            </Link>
+            </Link> */}
           </nav>
         )}
       </div>
