@@ -59,7 +59,7 @@ export function Navbar() {
                   Home
                 </Link>
                 <Link href="#about" className="text-lg font-medium py-2">
-                  About
+                  About Me
                 </Link>
                 <Link href="#portfolio" className="text-lg font-medium py-2">
                   Portfolio
