@@ -1,0 +1,116 @@
+"use client"
+
+import { useState, useEffect } from "react"
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
+import { Scissors } from "lucide-react"
+import { useMobile } from "@/hooks/use-mobile"
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { Menu } from "lucide-react"
+
+export function Navbar() {
+  const [isScrolled, setIsScrolled] = useState(false)
+  const isMobile = useMobile()
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setIsScrolled(true)
+      } else {
+        setIsScrolled(false)
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [])
+
+  return (
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled ? "bg-white/90 backdrop-blur-md shadow-sm py-2" : "bg-transparent py-4"
+      }`}
+    >
+      <div className="container mx-auto px-4 flex items-center justify-between">
+        <Link href="/" className="flex items-center gap-2">
+          <Scissors className={`h-6 w-6 ${isScrolled ? "text-teal-950" : "text-white"}`} />
+          <span className={`font-serif text-xl ${isScrolled ? "text-teal-950" : "text-white"}`}>Hairstylist</span>
+        </Link>
+
+        {isMobile ? (
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon" className={isScrolled ? "text-teal-950" : "text-white"}>
+                <Menu className="h-6 w-6" />
+              </Button>
+            </SheetTrigger>
+            <SheetContent>
+              <nav className="flex flex-col gap-4 mt-8">
+                <Link href="/" className="text-lg font-medium py-2">
+                  Home
+                </Link>
+                <Link href="#about" className="text-lg font-medium py-2">
+                  About
+                </Link>
+                <Link href="#portfolio" className="text-lg font-medium py-2">
+                  Portfolio
+                </Link>
+                <Link href="#contact" className="text-lg font-medium py-2">
+                  Contact
+                </Link>
+                <Link href="/admin" className="text-lg font-medium py-2">
+                  Admin
+                </Link>
+              </nav>
+            </SheetContent>
+          </Sheet>
+        ) : (
+          <nav className="flex items-center gap-8">
+            <Link
+              href="/"
+              className={`font-medium hover:underline underline-offset-4 ${
+                isScrolled ? "text-teal-950" : "text-white"
+              }`}
+            >
+              Home
+            </Link>
+            <Link
+              href="#about"
+              className={`font-medium hover:underline underline-offset-4 ${
+                isScrolled ? "text-teal-950" : "text-white"
+              }`}
+            >
+              About
+            </Link>
+            <Link
+              href="#portfolio"
+              className={`font-medium hover:underline underline-offset-4 ${
+                isScrolled ? "text-teal-950" : "text-white"
+              }`}
+            >
+              Portfolio
+            </Link>
+            <Link
+              href="#contact"
+              className={`font-medium hover:underline underline-offset-4 ${
+                isScrolled ? "text-teal-950" : "text-white"
+              }`}
+            >
+              Contact
+            </Link>
+            <Link href="/admin">
+              <Button
+                variant={isScrolled ? "default" : "outline"}
+                className={!isScrolled ? "border-white text-white hover:bg-white hover:text-teal-950" : ""}
+              >
+                Admin
+              </Button>
+            </Link>
+          </nav>
+        )}
+      </div>
+    </header>
+  )
+}
