@@ -37,11 +37,15 @@ export function Navbar() {
       <div className="container mx-auto px-4 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
           <Image
-            src="https://res.cloudinary.com/deq6qm96r/image/upload/v1749064881/Marisa_Navarro_Logo_jpeg-removebg-preview_doktis.png"
+            src={
+              isScrolled
+                ? "https://res.cloudinary.com/deq6qm96r/image/upload/v1749064881/Marisa_Navarro_Logo_jpeg-removebg-preview_doktis.png" // Dark logo when scrolled
+                : "https://res.cloudinary.com/deq6qm96r/image/upload/v1749101918/Marisa_Navarro_Logo_white_lcxu0y.png" // Original light logo
+            }
             alt="Marisa Navarro Logo"
             width={50}
-            height={10}
-            className="w-[50px] h-auto"
+            height={50} // Adjusted for better aspect ratio
+            className="w-[50px] h-auto transition-all duration-300"
             priority
           />
         </Link>

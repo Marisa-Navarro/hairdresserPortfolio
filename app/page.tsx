@@ -13,7 +13,7 @@ export default function Home() {
       <section className="relative h-screen bg-teal-950 text-white">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://res.cloudinary.com/deq6qm96r/image/upload/v1749064758/ali-pazani-3w14X-Yxffk-unsplash_pzjktu.jpg"
+            src="https://res.cloudinary.com/deq6qm96r/image/upload/v1749101535/IMG_7824_iogjni.jpg"
             alt="Hairstyling background"
             fill
             className="object-cover opacity-10"
@@ -52,7 +52,7 @@ export default function Home() {
                 coloring techniques, specializing in creating personalized styles that enhance each client's unique
                 features.
               </p>
-              <Button className="bg-teal-800 hover:bg-teal-900 text-white">
+              <Button className="bg-gray-950 hover:bg-teal-900 text-white">
                 <Link href="#contact">Get in Touch</Link>
               </Button>
             </div>
@@ -128,7 +128,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-teal-950 text-white py-12 px-4">
+      <footer className="bg-gray-950 text-white py-12 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8">
             <div>
@@ -174,7 +174,7 @@ export default function Home() {
                   placeholder="Your email"
                   className="px-4 py-2 w-full text-gray-900 rounded-l-md focus:outline-none"
                 />
-                <Button className="rounded-l-none bg-teal-800 hover:bg-teal-700">Subscribe</Button>
+                <Button className="rounded-l-none bg-gray-950 hover:bg-teal-700">Subscribe</Button>
               </form>
             </div>
           </div>

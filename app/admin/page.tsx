@@ -2,7 +2,7 @@
 
 import type React from "react"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -11,7 +11,17 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Label } from "@/components/ui/label"
 import { useToast } from "@/hooks/use-toast"
-import { Upload, ImageIcon, Film } from "lucide-react"
+import { Upload, ImageIcon, Film, Trash2, Edit, X } from "lucide-react"
+import { supabase } from "@/components/config"
+import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/components/ui/alert-dialog"
+
+interface PortfolioItem {
+  id: number
+  imgurl: string
+  category: string
+  type: 'image' | 'video'
+  created_at: string
+}
 
 export default function AdminPage() {
   const { toast } = useToast()
@@ -25,6 +35,8 @@ export default function AdminPage() {
   })
   const [file, setFile] = useState<File | null>(null)
   const [isUploading, setIsUploading] = useState(false)
+  const [portfolioItems, setPortfolioItems] = useState<PortfolioItem[]>([])
+  const [isLoading, setIsLoading] = useState(true)
 
   const handleLoginChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
@@ -77,23 +89,117 @@ export default function AdminPage() {
 
     setIsUploading(true)
 
-    // Simulate upload to Cloudinary
-    await new Promise((resolve) => setTimeout(resolve, 2000))
+    try {
+      // Generate unique filename
+      const fileExt = file.name.split('.').pop()
+      const uniqueId = Date.now().toString()
+      const fileName = `${uniqueId}.${fileExt}`
+      const filePath = `${uploadData.type}s/${uploadData.category}/${fileName}`
 
-    toast({
-      title: "Upload successful",
-      description: `${uploadData.title} has been added to your portfolio`,
-    })
+      // Upload file to Supabase Storage
+      const { error: uploadError, data } = await supabase.storage
+        .from('img')
+        .upload(filePath, file, {
+          cacheControl: '3600',
+          upsert: false,
+        })
 
-    // Reset form
-    setUploadData({
-      title: "",
-      category: "haircuts",
-      type: "image",
-      description: "",
-    })
-    setFile(null)
-    setIsUploading(false)
+      if (uploadError) throw uploadError
+
+      // Get public URL
+      const { data: { publicUrl } } = supabase.storage
+        .from('img')
+        .getPublicUrl(filePath)
+
+      // Create database entry with type field
+      const { error: dbError } = await supabase
+        .from('portfolio')
+        .insert([
+          {
+            imgurl: publicUrl,
+            category: uploadData.category,
+            type: uploadData.type, // Add type field
+            created_at: new Date().toISOString()
+          },
+        ])
+
+      if (dbError) throw dbError
+
+      toast({
+        title: "Upload successful",
+        description: `${uploadData.type === 'video' ? 'Video' : 'Image'} has been added to your portfolio`,
+      })
+
+      // Reset form
+      setUploadData({
+        title: "",
+        category: "haircuts",
+        type: "image",
+        description: "",
+      })
+      setFile(null)
+
+    } catch (error) {
+      console.error('Error uploading:', error)
+      toast({
+        title: "Upload failed",
+        description: "There was an error uploading your file",
+        variant: "destructive",
+      })
+    } finally {
+      setIsUploading(false)
+    }
+  }
+
+  useEffect(() => {
+    async function fetchPortfolioItems() {
+      try {
+        const { data, error } = await supabase
+          .from('portfolio')
+          .select('*')
+          .order('created_at', { ascending: false })
+
+        if (error) throw error
+        setPortfolioItems(data || [])
+      } catch (error) {
+        console.error('Error fetching portfolio items:', error)
+        toast({
+          title: "Error loading portfolio",
+          description: "Failed to load portfolio items",
+          variant: "destructive",
+        })
+      } finally {
+        setIsLoading(false)
+      }
+    }
+
+    if (isAuthenticated) {
+      fetchPortfolioItems()
+    }
+  }, [isAuthenticated])
+
+  const handleDelete = async (id: number) => {
+    try {
+      const { error } = await supabase
+        .from('portfolio')
+        .delete()
+        .eq('id', id)
+
+      if (error) throw error
+
+      setPortfolioItems(prev => prev.filter(item => item.id !== id))
+      toast({
+        title: "Item deleted",
+        description: "Portfolio item has been removed",
+      })
+    } catch (error) {
+      console.error('Error deleting item:', error)
+      toast({
+        title: "Delete failed",
+        description: "There was an error deleting the item",
+        variant: "destructive",
+      })
+    }
   }
 
   if (!isAuthenticated) {
@@ -248,9 +354,70 @@ export default function AdminPage() {
                 <CardDescription>View, edit, or delete your portfolio content</CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="text-center py-12">
-                  <p className="text-gray-500">Your uploaded content will appear here for management</p>
-                </div>
+                {isLoading ? (
+                  <div className="text-center py-12">
+                    <p className="text-gray-500">Loading portfolio items...</p>
+                  </div>
+                ) : portfolioItems.length === 0 ? (
+                  <div className="text-center py-12">
+                    <p className="text-gray-500">No items in your portfolio yet</p>
+                  </div>
+                ) : (
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {portfolioItems.map((item) => (
+                      <div key={item.id} className="relative group rounded-lg overflow-hidden border border-gray-200">
+                        <div className="aspect-[3/4] relative">
+                          {item.type === 'video' ? (
+                            <video
+                              src={item.imgurl}
+                              className="absolute inset-0 w-full h-full object-cover"
+                            />
+                          ) : (
+                            <img
+                              src={item.imgurl}
+                              alt={`Portfolio item ${item.category}`}
+                              className="absolute inset-0 w-full h-full object-cover"
+                            />
+                          )}
+                          <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2">
+                            <AlertDialog>
+                              <AlertDialogTrigger asChild>
+                                <Button
+                                  variant="destructive"
+                                  size="icon"
+                                  className="h-8 w-8"
+                                >
+                                  <Trash2 className="h-4 w-4" />
+                                </Button>
+                              </AlertDialogTrigger>
+                              <AlertDialogContent>
+                                <AlertDialogHeader>
+                                  <AlertDialogTitle>Are you sure?</AlertDialogTitle>
+                                  <AlertDialogDescription>
+                                    This action cannot be undone. This will permanently delete this item from your portfolio.
+                                  </AlertDialogDescription>
+                                </AlertDialogHeader>
+                                <AlertDialogFooter>
+                                  <AlertDialogCancel>Cancel</AlertDialogCancel>
+                                  <AlertDialogAction
+                                    onClick={() => handleDelete(item.id)}
+                                    className="bg-red-600 hover:bg-red-700"
+                                  >
+                                    Delete
+                                  </AlertDialogAction>
+                                </AlertDialogFooter>
+                              </AlertDialogContent>
+                            </AlertDialog>
+                          </div>
+                        </div>
+                        <div className="p-3 bg-white">
+                          <p className="text-sm font-medium capitalize">{item.category}</p>
+                          <p className="text-xs text-gray-500 capitalize">{item.type}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </CardContent>
             </Card>
           </TabsContent>
