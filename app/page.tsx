@@ -1,3 +1,8 @@
+"use client"
+
+import { useEffect } from "react"
+import AOS from "aos"
+import "aos/dist/aos.css"
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
@@ -7,10 +12,18 @@ import { GalleryGrid } from "@/components/gallery-grid"
 import { SocialLinks } from "@/components/social-links"
 
 export default function Home() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+      easing: 'ease-out'
+    })
+  }, [])
+
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-screen  text-white">
+      <section className="relative h-screen text-white">
         <div className="absolute inset-0 z-0">
           <Image
             src="https://res.cloudinary.com/deq6qm96r/image/upload/v1749375940/IMG_7826_quy47i.jpg"
@@ -41,11 +54,11 @@ export default function Home() {
       {/* About Section */}
       <section className="py-24 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
-          <h2 className="font-serif text-4xl md:text-5xl text-center mb-16">
+          <h2 className="font-serif text-4xl md:text-5xl text-center mb-16" data-aos="fade-up">
             About <span className="italic">Me</span>
           </h2>
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
+            <div className="space-y-6" data-aos="fade-right">
               <p className="text-lg leading-relaxed text-gray-700">
                 I've been training for a well-known company, GHD. I'm a professional hairdresser and currently I'm
                 applying to become a hairdressing teacher. I don't have a business, but I want to include my experience
@@ -60,7 +73,7 @@ export default function Home() {
                 <Link href="#contact">Get in Touch</Link>
               </Button>
             </div>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-4" data-aos="fade-left">
               <Image
                 src="https://res.cloudinary.com/deq6qm96r/image/upload/v1749065644/IMG_7822_sphigr.png"
                 alt="Hairdresser at work"
@@ -83,11 +96,11 @@ export default function Home() {
       {/* Portfolio Section */}
       <section id="portfolio" className="py-24 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
-          <h2 className="font-serif text-4xl md:text-5xl text-center mb-16">
+          <h2 className="font-serif text-4xl md:text-5xl text-center mb-16" data-aos="fade-up">
             The <span className="italic">Portfolio</span>
           </h2>
           <Tabs defaultValue="Formaciones y Seminarios" className="w-full">
-            <TabsList className="grid grid-cols-4 max-w-md mx-auto mb-[170px] bg-transparent gap-32">
+            <TabsList className="grid grid-cols-4 max-w-md mx-auto mb-[170px] bg-transparent gap-32" data-aos="fade-up" data-aos-delay="200">
               <TabsTrigger value="Formaciones y Seminarios" className="flex flex-col items-center data-[state=active]:bg-transparent">
                 <div className="w-32 h-32 rounded-full overflow-hidden mb-2 border-2 border-transparent transition-colors data-[state=active]:border-teal-600">
                   <Image
@@ -141,7 +154,7 @@ export default function Home() {
               </TabsTrigger>
             </TabsList>
 
-            <TabsContent value="Formaciones y Seminarios">
+            <TabsContent value="Formaciones y Seminarios" data-aos="fade-up" data-aos-delay="400">
               <GalleryGrid category="Formaciones y Seminarios" />
             </TabsContent>
             <TabsContent value="Directos">
@@ -162,19 +175,19 @@ export default function Home() {
       {/* Social & Contact Section */}
       <section id="contact" className="py-24 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
-          <h2 className="font-serif text-4xl md:text-5xl text-center mb-16">
+          <h2 className="font-serif text-4xl md:text-5xl text-center mb-16" data-aos="fade-up">
             Connect <span className="italic">with</span> Me
           </h2>
           <div className="grid md:grid-cols-2 gap-12">
-            <div>
+            <div data-aos="fade-right">
               <h3 className="font-serif text-2xl mb-6">Social Media</h3>
               <p className="text-gray-700 mb-8">
                 Follow me on social media to see my latest work, behind-the-scenes content, and hairstyling tips.
               </p>
               <SocialLinks />
             </div>
-            <div>
-               <Image
+            <div data-aos="fade-left">
+              <Image
                 src="https://res.cloudinary.com/deq6qm96r/image/upload/v1749379713/IMG_7825_lgpgix.jpg"
                 alt="Hairdresser at work"
                 width={600}
@@ -188,7 +201,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="bg-gray-950 text-white py-12 px-4">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-6xl mx-auto" data-aos="fade-up">
           <div className="grid md:grid-cols-3 gap-8">
             <div>
               <Image
