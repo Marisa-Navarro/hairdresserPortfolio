@@ -275,9 +275,10 @@ export default function AdminPage() {
                           <SelectValue placeholder="Select category" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="haircuts">Haircuts</SelectItem>
-                          <SelectItem value="coloring">Coloring</SelectItem>
-                          <SelectItem value="styling">Styling</SelectItem>
+                          <SelectItem value="Formaciones y Seminarios">Formaciones y Seminarios</SelectItem>
+                          <SelectItem value="Directos">Directos</SelectItem>
+                          <SelectItem value="Vídeos educativos"> Vídeos educativos</SelectItem>
+                          <SelectItem value="Eventos"> Eventos</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>

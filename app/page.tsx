@@ -87,11 +87,58 @@ export default function Home() {
             The <span className="italic">Portfolio</span>
           </h2>
           <Tabs defaultValue="all" className="w-full">
-            <TabsList className="grid grid-cols-4 max-w-md mx-auto mb-12">
-              <TabsTrigger value="all">All</TabsTrigger>
-              <TabsTrigger value="haircuts">Haircuts</TabsTrigger>
-              <TabsTrigger value="coloring">Coloring</TabsTrigger>
-              <TabsTrigger value="styling">Styling</TabsTrigger>
+            <TabsList className="grid grid-cols-4 max-w-md mx-auto mb-12 bg-transparent gap-32">
+              <TabsTrigger value="all" className="flex flex-col items-center data-[state=active]:bg-transparent">
+                <div className="w-32 h-32 rounded-full overflow-hidden mb-2 border-2 border-transparent transition-colors data-[state=active]:border-teal-600">
+                  <Image
+                    src="https://res.cloudinary.com/deq6qm96r/image/upload/v1749399190/1_dtqqyj.jpg"
+                    alt="All services"
+                    width={150}
+                    height={150}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <span className="text-sm font-medium">Formaciones y Seminarios</span>
+              </TabsTrigger>
+
+              <TabsTrigger value="haircuts" className="flex flex-col items-center data-[state=active]:bg-transparent">
+                <div className="w-32 h-32 rounded-full overflow-hidden mb-2 border-2 border-transparent transition-colors data-[state=active]:border-teal-600">
+                  <Image
+                    src="https://res.cloudinary.com/deq6qm96r/image/upload/v1749399190/2_t0noqf.jpg"
+                    alt="Haircuts"
+                    width={150}
+                    height={150}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <span className="text-sm font-medium">Directos</span>
+              </TabsTrigger>
+
+              <TabsTrigger value="coloring" className="flex flex-col items-center data-[state=active]:bg-transparent">
+                <div className="w-32 h-32 rounded-full overflow-hidden mb-2 border-2 border-transparent transition-colors data-[state=active]:border-teal-600">
+                  <Image
+                    src="https://res.cloudinary.com/deq6qm96r/image/upload/v1749399190/3_vmpyf2.jpg"
+                    alt="Coloring"
+                    width={150}
+                    height={150}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <span className="text-sm font-medium">Vídeos educativos</span>
+              </TabsTrigger>
+
+              <TabsTrigger value="styling" className="flex flex-col items-center data-[state=active]:bg-transparent">
+                <div className="w-32 h-32 rounded-full overflow-hidden mb-2 border-2 border-transparent transition-colors data-[state=active]:border-teal-600">
+                  <Image
+                    src="https://res.cloudinary.com/deq6qm96r/image/upload/v1749399195/4_vt6zjr.jpg"
+                    alt="Styling"
+                    width={150}
+                    height={150}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <span className="text-sm font-medium">Eventos</span>
+              </TabsTrigger>
             </TabsList>
             <TabsContent value="all">
               <GalleryGrid category="all" />
