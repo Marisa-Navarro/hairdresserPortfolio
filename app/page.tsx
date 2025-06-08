@@ -86,9 +86,9 @@ export default function Home() {
           <h2 className="font-serif text-4xl md:text-5xl text-center mb-16">
             The <span className="italic">Portfolio</span>
           </h2>
-          <Tabs defaultValue="all" className="w-full">
-            <TabsList className="grid grid-cols-4 max-w-md mx-auto mb-12 bg-transparent gap-32">
-              <TabsTrigger value="all" className="flex flex-col items-center data-[state=active]:bg-transparent">
+          <Tabs defaultValue="Formaciones y Seminarios" className="w-full">
+            <TabsList className="grid grid-cols-4 max-w-md mx-auto mb-[170px] bg-transparent gap-32">
+              <TabsTrigger value="Formaciones y Seminarios" className="flex flex-col items-center data-[state=active]:bg-transparent">
                 <div className="w-32 h-32 rounded-full overflow-hidden mb-2 border-2 border-transparent transition-colors data-[state=active]:border-teal-600">
                   <Image
                     src="https://res.cloudinary.com/deq6qm96r/image/upload/v1749399190/1_dtqqyj.jpg"
@@ -101,7 +101,7 @@ export default function Home() {
                 <span className="text-sm font-medium">Formaciones y Seminarios</span>
               </TabsTrigger>
 
-              <TabsTrigger value="haircuts" className="flex flex-col items-center data-[state=active]:bg-transparent">
+              <TabsTrigger value="Directos" className="flex flex-col items-center data-[state=active]:bg-transparent">
                 <div className="w-32 h-32 rounded-full overflow-hidden mb-2 border-2 border-transparent transition-colors data-[state=active]:border-teal-600">
                   <Image
                     src="https://res.cloudinary.com/deq6qm96r/image/upload/v1749399190/2_t0noqf.jpg"
@@ -114,7 +114,7 @@ export default function Home() {
                 <span className="text-sm font-medium">Directos</span>
               </TabsTrigger>
 
-              <TabsTrigger value="coloring" className="flex flex-col items-center data-[state=active]:bg-transparent">
+              <TabsTrigger value="Vídeos educativos" className="flex flex-col items-center data-[state=active]:bg-transparent">
                 <div className="w-32 h-32 rounded-full overflow-hidden mb-2 border-2 border-transparent transition-colors data-[state=active]:border-teal-600">
                   <Image
                     src="https://res.cloudinary.com/deq6qm96r/image/upload/v1749399190/3_vmpyf2.jpg"
@@ -127,7 +127,7 @@ export default function Home() {
                 <span className="text-sm font-medium">Vídeos educativos</span>
               </TabsTrigger>
 
-              <TabsTrigger value="styling" className="flex flex-col items-center data-[state=active]:bg-transparent">
+              <TabsTrigger value="Eventos" className="flex flex-col items-center data-[state=active]:bg-transparent">
                 <div className="w-32 h-32 rounded-full overflow-hidden mb-2 border-2 border-transparent transition-colors data-[state=active]:border-teal-600">
                   <Image
                     src="https://res.cloudinary.com/deq6qm96r/image/upload/v1749399195/4_vt6zjr.jpg"
@@ -140,18 +140,21 @@ export default function Home() {
                 <span className="text-sm font-medium">Eventos</span>
               </TabsTrigger>
             </TabsList>
-            <TabsContent value="all">
-              <GalleryGrid category="all" />
+
+            <TabsContent value="Formaciones y Seminarios">
+              <GalleryGrid category="Formaciones y Seminarios" />
             </TabsContent>
-            <TabsContent value="haircuts">
-              <GalleryGrid category="haircuts" />
+            <TabsContent value="Directos">
+              <GalleryGrid category="Directos" />
             </TabsContent>
-            <TabsContent value="coloring">
-              <GalleryGrid category="coloring" />
+            <TabsContent value="Vídeos educativos">
+              <GalleryGrid category="Vídeos educativos" />
             </TabsContent>
-            <TabsContent value="styling">
-              <GalleryGrid category="styling" />
+            <TabsContent value="Eventos">
+              <GalleryGrid category="Eventos" />
             </TabsContent>
+
+            
           </Tabs>
         </div>
       </section>
