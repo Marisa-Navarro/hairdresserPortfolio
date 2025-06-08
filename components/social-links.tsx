@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { Instagram, TwitterIcon as TikTok } from "lucide-react"
+import { FaTiktok } from "react-icons/fa";
 
 export function SocialLinks() {
   return (
@@ -19,7 +20,7 @@ export function SocialLinks() {
         rel="noopener noreferrer"
         className="bg-gray-950 text-white p-3 rounded-full hover:bg-teal-700 transition-colors"
       >
-        <TikTok className="h-6 w-6" />
+        <FaTiktok className="h-6 w-6"/>
         <span className="sr-only">TikTok</span>
       </Link>
     </div>

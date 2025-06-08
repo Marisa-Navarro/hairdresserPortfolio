@@ -21,14 +21,14 @@ export default function Home() {
           />
         </div>
         <div className="relative z-10 flex h-full  flex-col items-center justify-center text-center px-4">
-          <div className="relative backdrop-blur-md bg-white/30 border border-white/20 rounded-xl p-8 shadow-lg">
+          {/* <div className="relative backdrop-blur-md bg-white/30 border border-white/20 rounded-xl p-8 shadow-lg">
             <h1 className="font-serif text-5xl md:text-7xl tracking-tight mb-4">
               Styled <span className="italic">for</span> Life
             </h1>
             <p className="text-lg md:text-xl max-w-md mx-auto ">
               Boutique hairdressing built for you.
             </p>
-          </div>
+          </div> */}
           {/* <Button
             variant="outline"
             className="border-white text-white hover:bg-white hover:text-teal-950 transition-colors"
@@ -124,8 +124,13 @@ export default function Home() {
               <SocialLinks />
             </div>
             <div>
-              <h3 className="font-serif text-2xl mb-6">Get in Touch</h3>
-              <ContactForm />
+               <Image
+                src="https://res.cloudinary.com/deq6qm96r/image/upload/v1749379713/IMG_7825_lgpgix.jpg"
+                alt="Hairdresser at work"
+                width={600}
+                height={400}
+                className="rounded-lg object-cover h-full w-full"
+              />
             </div>
           </div>
         </div>
