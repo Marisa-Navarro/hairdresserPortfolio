@@ -91,7 +91,7 @@ export default function Home() {
               <TabsTrigger value="Formaciones y Seminarios" className="flex flex-col items-center data-[state=active]:bg-transparent">
                 <div className="w-32 h-32 rounded-full overflow-hidden mb-2 border-2 border-transparent transition-colors data-[state=active]:border-teal-600">
                   <Image
-                    src="https://res.cloudinary.com/deq6qm96r/image/upload/v1749399190/1_dtqqyj.jpg"
+                    src="https://res.cloudinary.com/deq6qm96r/image/upload/v1749404018/1_1_ycnu44.jpg"
                     alt="All services"
                     width={150}
                     height={150}
@@ -130,7 +130,7 @@ export default function Home() {
               <TabsTrigger value="Eventos" className="flex flex-col items-center data-[state=active]:bg-transparent">
                 <div className="w-32 h-32 rounded-full overflow-hidden mb-2 border-2 border-transparent transition-colors data-[state=active]:border-teal-600">
                   <Image
-                    src="https://res.cloudinary.com/deq6qm96r/image/upload/v1749399195/4_vt6zjr.jpg"
+                    src="https://res.cloudinary.com/deq6qm96r/image/upload/v1749404021/4_1_o0pwxy.jpg"
                     alt="Styling"
                     width={150}
                     height={150}
