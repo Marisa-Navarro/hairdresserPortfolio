@@ -191,6 +191,18 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8">
             <div>
+              <Image
+                src="https://res.cloudinary.com/deq6qm96r/image/upload/v1749101918/Marisa_Navarro_Logo_white_lcxu0y.png"
+                alt="Marisa Navarro Logo"
+                width={150}
+                height={60}
+                className="mb-4"
+              />
+              <p className="text-gray-400 mt-4">
+                Professional hairdresser and educator passionate about creating beautiful styles and sharing knowledge.
+              </p>
+            </div>
+            <div>
               <h3 className="font-serif text-xl mb-4">Navigation</h3>
               <ul className="space-y-2">
                 <li>
@@ -224,21 +236,9 @@ export default function Home() {
                 <li>Bridal & Special Events</li>
               </ul>
             </div>
-            <div>
-              <h3 className="font-serif text-xl mb-4">Newsletter</h3>
-              <p className="mb-4">Subscribe for hairstyling tips and updates</p>
-              <form className="flex">
-                <input
-                  type="email"
-                  placeholder="Your email"
-                  className="px-4 py-2 w-full text-gray-900 rounded-l-md focus:outline-none"
-                />
-                <Button className="rounded-l-none bg-gray-950 hover:bg-teal-700">Subscribe</Button>
-              </form>
-            </div>
           </div>
           <div className="border-t border-teal-800 mt-8 pt-8 text-center">
-            <p>&copy; {new Date().getFullYear()} Hairdresser Portfolio. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Marisa Navarro. All rights reserved.</p>
           </div>
         </div>
       </footer>
