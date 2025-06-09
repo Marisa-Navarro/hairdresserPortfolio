@@ -277,7 +277,7 @@ export default function AdminPage() {
                         <SelectContent>
                           <SelectItem value="Formaciones y Seminarios">Formaciones y Seminarios</SelectItem>
                           <SelectItem value="Directos">Directos</SelectItem>
-                          <SelectItem value="Vídeos educativos"> Vídeos educativos</SelectItem>
+                          <SelectItem value="Material educativo"> Material educativo</SelectItem>
                           <SelectItem value="Eventos"> Eventos</SelectItem>
                         </SelectContent>
                       </Select>
