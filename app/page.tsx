@@ -34,20 +34,7 @@ export default function Home() {
           />
         </div>
         <div className="relative z-10 flex h-full  flex-col items-center justify-center text-center px-4">
-          {/* <div className="relative backdrop-blur-md bg-white/30 border border-white/20 rounded-xl p-8 shadow-lg">
-            <h1 className="font-serif text-5xl md:text-7xl tracking-tight mb-4">
-              Styled <span className="italic">for</span> Life
-            </h1>
-            <p className="text-lg md:text-xl max-w-md mx-auto ">
-              Boutique hairdressing built for you.
-            </p>
-          </div> */}
-          {/* <Button
-            variant="outline"
-            className="border-white text-white hover:bg-white hover:text-teal-950 transition-colors"
-          >
-            <Link href="#portfolio">View Portfolio</Link>
-          </Button> */}
+         
         </div>
       </section>
 
@@ -60,16 +47,7 @@ export default function Home() {
           </h2>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6" data-aos="fade-right">
-              {/* <p className="text-lg leading-relaxed text-gray-700">
-                He estado formando para una empresa reconocida, GHD. Soy peluquera profesional y actualmente estoy
-                aplicando para convertirme en profesora de peluquería. No tengo un negocio propio, pero quiero incluir
-                mi experiencia y vídeos en mi portafolio, que necesito presentar en mi próximo examen.
-              </p>
-              <p className="text-lg leading-relaxed text-gray-700">
-                Con más de 5 años de experiencia en la industria, he desarrollado experiencia en varias técnicas de
-                corte y coloración, especializándome en crear estilos personalizados que realzan las características
-                únicas de cada cliente.
-              </p> */}
+             
               
               <p className="text-lg leading-relaxed text-gray-700">
                 Soy Formadora Profesional de peluquería y, a través de la enseñanza, puedo aportar lo mejor de mí con experiencia e ilusión. En mi trayectoria, he tenido la oportunidad de especializarme y compartir conocimientos con profesionales del estilismo, algo que me ha enriquecido profundamente.</p>
@@ -77,7 +55,7 @@ export default function Home() {
 
 Me motiva seguir aprendiendo y avanzando en este mundo de la enseñanza, donde cada día representa una nueva oportunidad para descubrir, enseñar e inspirar.
 
-Con el espacio que he dejado en medio de cada párrafo
+
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4" data-aos="fade-left">
@@ -107,59 +85,61 @@ Con el espacio que he dejado en medio de cada párrafo
             <span className="italic">Portfolio</span>
           </h2>
           <Tabs defaultValue="Formaciones y Seminarios" className="w-full">
-            <TabsList className="grid grid-cols-4 max-w-md mx-auto mb-[170px] bg-transparent gap-32" data-aos="fade-up" data-aos-delay="200">
-              <TabsTrigger value="Formaciones y Seminarios" className="flex flex-col items-center data-[state=active]:bg-transparent">
-                <div className="w-32 h-32 rounded-full overflow-hidden mb-2 border-2 border-transparent transition-all duration-300 hover:scale-110 data-[state=active]:border-teal-600">
-                  <Image
-                    src="https://res.cloudinary.com/deq6qm96r/image/upload/v1749404018/1_1_ycnu44.jpg"
-                    alt="All services"
-                    width={150}
-                    height={150}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <span className="text-sm font-medium">Formaciones y Seminarios</span>
-              </TabsTrigger>
+            <div className="overflow-x-auto pb-4 mb-8">
+              <TabsList className="grid grid-cols-4 min-w-[800px] mx-auto mb-[170px] bg-transparent gap-32 md:min-w-0 md:max-w-md" data-aos="fade-up" data-aos-delay="200">
+                <TabsTrigger value="Formaciones y Seminarios" className="flex flex-col items-center data-[state=active]:bg-transparent">
+                  <div className="w-32 h-32 rounded-full overflow-hidden mb-2 border-2 border-transparent transition-all duration-300 hover:scale-110 data-[state=active]:border-teal-600">
+                    <Image
+                      src="https://res.cloudinary.com/deq6qm96r/image/upload/v1749404018/1_1_ycnu44.jpg"
+                      alt="All services"
+                      width={150}
+                      height={150}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <span className="text-sm font-medium">Formaciones y Seminarios</span>
+                </TabsTrigger>
 
-              <TabsTrigger value="Directos" className="flex flex-col items-center data-[state=active]:bg-transparent">
-                <div className="w-32 h-32 rounded-full overflow-hidden mb-2 border-2 border-transparent transition-all duration-300 hover:scale-110 data-[state=active]:border-teal-600">
-                  <Image
-                    src="https://res.cloudinary.com/deq6qm96r/image/upload/v1749399190/2_t0noqf.jpg"
-                    alt="Haircuts"
-                    width={150}
-                    height={150}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <span className="text-sm font-medium">Directos</span>
-              </TabsTrigger>
+                <TabsTrigger value="Directos" className="flex flex-col items-center data-[state=active]:bg-transparent">
+                  <div className="w-32 h-32 rounded-full overflow-hidden mb-2 border-2 border-transparent transition-all duration-300 hover:scale-110 data-[state=active]:border-teal-600">
+                    <Image
+                      src="https://res.cloudinary.com/deq6qm96r/image/upload/v1749399190/2_t0noqf.jpg"
+                      alt="Haircuts"
+                      width={150}
+                      height={150}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <span className="text-sm font-medium">Directos</span>
+                </TabsTrigger>
 
-              <TabsTrigger value="Vídeos educativos" className="flex flex-col items-center data-[state=active]:bg-transparent">
-                <div className="w-32 h-32 rounded-full overflow-hidden mb-2 border-2 border-transparent transition-all duration-300 hover:scale-110 data-[state=active]:border-teal-600">
-                  <Image
-                    src="https://res.cloudinary.com/deq6qm96r/image/upload/v1749399190/3_vmpyf2.jpg"
-                    alt="Coloring"
-                    width={150}
-                    height={150}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <span className="text-sm font-medium">Vídeos Educativos</span>
-              </TabsTrigger>
+                <TabsTrigger value="Vídeos educativos" className="flex flex-col items-center data-[state=active]:bg-transparent">
+                  <div className="w-32 h-32 rounded-full overflow-hidden mb-2 border-2 border-transparent transition-all duration-300 hover:scale-110 data-[state=active]:border-teal-600">
+                    <Image
+                      src="https://res.cloudinary.com/deq6qm96r/image/upload/v1749399190/3_vmpyf2.jpg"
+                      alt="Coloring"
+                      width={150}
+                      height={150}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <span className="text-sm font-medium">Vídeos Educativos</span>
+                </TabsTrigger>
 
-              <TabsTrigger value="Eventos" className="flex flex-col items-center data-[state=active]:bg-transparent">
-                <div className="w-32 h-32 rounded-full overflow-hidden mb-2 border-2 border-transparent transition-all duration-300 hover:scale-110 data-[state=active]:border-teal-600">
-                  <Image
-                    src="https://res.cloudinary.com/deq6qm96r/image/upload/v1749404021/4_1_o0pwxy.jpg"
-                    alt="Styling"
-                    width={150}
-                    height={150}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <span className="text-sm font-medium">Eventos</span>
-              </TabsTrigger>
-            </TabsList>
+                <TabsTrigger value="Eventos" className="flex flex-col items-center data-[state=active]:bg-transparent">
+                  <div className="w-32 h-32 rounded-full overflow-hidden mb-2 border-2 border-transparent transition-all duration-300 hover:scale-110 data-[state=active]:border-teal-600">
+                    <Image
+                      src="https://res.cloudinary.com/deq6qm96r/image/upload/v1749404021/4_1_o0pwxy.jpg"
+                      alt="Styling"
+                      width={150}
+                      height={150}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <span className="text-sm font-medium">Eventos</span>
+                </TabsTrigger>
+              </TabsList>
+            </div>
 
             <TabsContent value="Formaciones y Seminarios" data-aos="fade-up" data-aos-delay="400">
               <GalleryGrid category="Formaciones y Seminarios" />
