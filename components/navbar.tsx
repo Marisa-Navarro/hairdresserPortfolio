@@ -71,7 +71,7 @@ export function Navbar() {
                   Sobre mí
                 </Link>
                 <Link href="#portfolio" className="text-lg font-medium py-2" onClick={handleLinkClick}>
-                  Portafolio
+                  Portfolio
                 </Link>
                 <Link href="#contact" className="text-lg font-medium py-2" onClick={handleLinkClick}>
                   Contacto
@@ -103,7 +103,7 @@ export function Navbar() {
                 isScrolled ? "text-teal-950" : "text-white"
               }`}
             >
-              Portafolio
+              Portfolio
             </Link>
             <Link
               href="#contact"
