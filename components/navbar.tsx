@@ -11,6 +11,7 @@ import { Menu } from "lucide-react"
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
+  const [isOpen, setIsOpen] = useState(false)
   const isMobile = useIsMobile()
 
   useEffect(() => {
@@ -27,6 +28,10 @@ export function Navbar() {
       window.removeEventListener("scroll", handleScroll)
     }
   }, [])
+
+  const handleLinkClick = () => {
+    setIsOpen(false)
+  }
 
   return (
     <header
@@ -51,7 +56,7 @@ export function Navbar() {
         </Link>
 
         {isMobile ? (
-          <Sheet>
+          <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className={isScrolled ? "text-teal-950" : "text-white"}>
                 <Menu className="h-6 w-6" />
@@ -59,21 +64,18 @@ export function Navbar() {
             </SheetTrigger>
             <SheetContent>
               <nav className="flex flex-col gap-4 mt-8">
-                <Link href="/" className="text-lg font-medium py-2">
+                <Link href="/" className="text-lg font-medium py-2" onClick={handleLinkClick}>
                   Inicio
                 </Link>
-                <Link href="#about" className="text-lg font-medium py-2">
+                <Link href="#about" className="text-lg font-medium py-2" onClick={handleLinkClick}>
                   Sobre Mí
                 </Link>
-                <Link href="#portfolio" className="text-lg font-medium py-2">
+                <Link href="#portfolio" className="text-lg font-medium py-2" onClick={handleLinkClick}>
                   Portafolio
                 </Link>
-                <Link href="#contact" className="text-lg font-medium py-2">
+                <Link href="#contact" className="text-lg font-medium py-2" onClick={handleLinkClick}>
                   Contacto
                 </Link>
-                {/* <Link href="/admin" className="text-lg font-medium py-2">
-                  Admin
-                </Link> */}
               </nav>
             </SheetContent>
           </Sheet>
