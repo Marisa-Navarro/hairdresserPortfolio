@@ -52,14 +52,15 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section className="py-24 px-4 bg-white">
+      <section id="about" className="py-24 px-4 bg-white">
+       
         <div className="max-w-6xl mx-auto">
           <h2 className="font-serif text-4xl md:text-5xl text-center mb-16" data-aos="fade-up">
-            Sobre <span className="italic">Mí</span>
+            Sobre mí
           </h2>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6" data-aos="fade-right">
-              <p className="text-lg leading-relaxed text-gray-700">
+              {/* <p className="text-lg leading-relaxed text-gray-700">
                 He estado formando para una empresa reconocida, GHD. Soy peluquera profesional y actualmente estoy
                 aplicando para convertirme en profesora de peluquería. No tengo un negocio propio, pero quiero incluir
                 mi experiencia y vídeos en mi portafolio, que necesito presentar en mi próximo examen.
@@ -68,10 +69,11 @@ export default function Home() {
                 Con más de 5 años de experiencia en la industria, he desarrollado experiencia en varias técnicas de
                 corte y coloración, especializándome en crear estilos personalizados que realzan las características
                 únicas de cada cliente.
-              </p>
+              </p> */}
               
               <p className="text-lg leading-relaxed text-gray-700">
-                Soy Formadora Profesional de peluquería y, a través de la enseñanza, puedo aportar lo mejor de mí con experiencia e ilusión. En mi trayectoria, he tenido la oportunidad de especializarme y compartir conocimientos con profesionales del estilismo, algo que me ha enriquecido profundamente.
+                Soy Formadora Profesional de peluquería y, a través de la enseñanza, puedo aportar lo mejor de mí con experiencia e ilusión. En mi trayectoria, he tenido la oportunidad de especializarme y compartir conocimientos con profesionales del estilismo, algo que me ha enriquecido profundamente.</p>
+                <p className="text-lg leading-relaxed text-gray-700">
 
 Me motiva seguir aprendiendo y avanzando en este mundo de la enseñanza, donde cada día representa una nueva oportunidad para descubrir, enseñar e inspirar.
 
@@ -102,7 +104,7 @@ Con el espacio que he dejado en medio de cada párrafo
       <section id="portfolio" className="py-24 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <h2 className="font-serif text-4xl md:text-5xl text-center mb-16" data-aos="fade-up">
-            Mi <span className="italic">Portafolio</span>
+            <span className="italic">Portfolio</span>
           </h2>
           <Tabs defaultValue="Formaciones y Seminarios" className="w-full">
             <TabsList className="grid grid-cols-4 max-w-md mx-auto mb-[170px] bg-transparent gap-32" data-aos="fade-up" data-aos-delay="200">
@@ -181,7 +183,7 @@ Con el espacio que he dejado en medio de cada párrafo
       <section id="contact" className="py-24 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <h2 className="font-serif text-4xl md:text-5xl text-center mb-16" data-aos="fade-up">
-            Conecta <span className="italic">Conmigo</span>
+             <span className="italic">Contacto</span>
           </h2>
           <div className="grid md:grid-cols-2 gap-12">
             <div data-aos="fade-right">
