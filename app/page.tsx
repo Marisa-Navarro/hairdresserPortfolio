@@ -86,9 +86,9 @@ Me motiva seguir aprendiendo y avanzando en este mundo de la enseñanza, donde c
           </h2>
           <Tabs defaultValue="Formaciones y Seminarios" className="w-full">
             <div className="overflow-x-auto pb-4 mb-8">
-              <TabsList className="grid grid-cols-4 min-w-[800px] mx-auto mb-[170px] bg-transparent gap-32 md:min-w-0 md:max-w-md" data-aos="fade-up" data-aos-delay="200">
-                <TabsTrigger value="Formaciones y Seminarios" className="flex flex-col items-center data-[state=active]:bg-transparent">
-                  <div className="w-32 h-32 rounded-full overflow-hidden mb-2 border-2 border-transparent transition-all duration-300 hover:scale-110 data-[state=active]:border-teal-600">
+              <TabsList className="grid grid-cols-4 min-w-[350px] md:min-w-[800px] mx-auto mb-[170px] bg-transparent gap-8 md:gap-32 md:min-w-0 md:max-w-md items-start" data-aos="fade-up" data-aos-delay="200">
+                <TabsTrigger value="Formaciones y Seminarios" className="flex flex-col items-center data-[state=active]:bg-transparent pt-0">
+                  <div className="w-12 h-12 md:w-32 md:h-32 rounded-full overflow-hidden mb-2 border-2 border-transparent transition-all duration-300 hover:scale-110 data-[state=active]:border-teal-600">
                     <Image
                       src="https://res.cloudinary.com/deq6qm96r/image/upload/v1749404018/1_1_ycnu44.jpg"
                       alt="All services"
@@ -97,11 +97,11 @@ Me motiva seguir aprendiendo y avanzando en este mundo de la enseñanza, donde c
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <span className="text-sm font-medium">Formaciones y Seminarios</span>
+                  <span className="text-xs md:text-sm font-medium">Formaciones <br/> y <br/>Seminarios</span>
                 </TabsTrigger>
 
                 <TabsTrigger value="Directos" className="flex flex-col items-center data-[state=active]:bg-transparent">
-                  <div className="w-32 h-32 rounded-full overflow-hidden mb-2 border-2 border-transparent transition-all duration-300 hover:scale-110 data-[state=active]:border-teal-600">
+                  <div className="w-12 h-12 md:w-32 md:h-32 rounded-full overflow-hidden mb-2 border-2 border-transparent transition-all duration-300 hover:scale-110 data-[state=active]:border-teal-600">
                     <Image
                       src="https://res.cloudinary.com/deq6qm96r/image/upload/v1749399190/2_t0noqf.jpg"
                       alt="Haircuts"
@@ -110,11 +110,11 @@ Me motiva seguir aprendiendo y avanzando en este mundo de la enseñanza, donde c
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <span className="text-sm font-medium">Directos</span>
+                  <span className="text-xs md:text-sm font-medium">Directos</span>
                 </TabsTrigger>
 
                 <TabsTrigger value="Vídeos educativos" className="flex flex-col items-center data-[state=active]:bg-transparent">
-                  <div className="w-32 h-32 rounded-full overflow-hidden mb-2 border-2 border-transparent transition-all duration-300 hover:scale-110 data-[state=active]:border-teal-600">
+                  <div className="w-12 h-12 md:w-32 md:h-32 rounded-full overflow-hidden mb-2 border-2 border-transparent transition-all duration-300 hover:scale-110 data-[state=active]:border-teal-600">
                     <Image
                       src="https://res.cloudinary.com/deq6qm96r/image/upload/v1749399190/3_vmpyf2.jpg"
                       alt="Coloring"
@@ -123,11 +123,11 @@ Me motiva seguir aprendiendo y avanzando en este mundo de la enseñanza, donde c
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <span className="text-sm font-medium">Vídeos Educativos</span>
+                  <span className="text-xs md:text-sm font-medium">Vídeos Educativos</span>
                 </TabsTrigger>
 
                 <TabsTrigger value="Eventos" className="flex flex-col items-center data-[state=active]:bg-transparent">
-                  <div className="w-32 h-32 rounded-full overflow-hidden mb-2 border-2 border-transparent transition-all duration-300 hover:scale-110 data-[state=active]:border-teal-600">
+                  <div className="w-12 h-12 md:w-32 md:h-32 rounded-full overflow-hidden mb-2 border-2 border-transparent transition-all duration-300 hover:scale-110 data-[state=active]:border-teal-600">
                     <Image
                       src="https://res.cloudinary.com/deq6qm96r/image/upload/v1749404021/4_1_o0pwxy.jpg"
                       alt="Styling"
@@ -136,7 +136,7 @@ Me motiva seguir aprendiendo y avanzando en este mundo de la enseñanza, donde c
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <span className="text-sm font-medium">Eventos</span>
+                  <span className="text-xs md:text-sm font-medium">Eventos</span>
                 </TabsTrigger>
               </TabsList>
             </div>
