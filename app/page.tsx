@@ -147,8 +147,8 @@ Me motiva seguir aprendiendo y avanzando en este mundo de la enseñanza, donde c
             <TabsContent value="Directos">
               <GalleryGrid category="Directos" />
             </TabsContent>
-            <TabsContent value="Vídeos educativos">
-              <GalleryGrid category="Vídeos educativos" />
+            <TabsContent value="Material-educativo">
+              <GalleryGrid category="Material-educativo" />
             </TabsContent>
             <TabsContent value="Eventos">
               <GalleryGrid category="Eventos" />
