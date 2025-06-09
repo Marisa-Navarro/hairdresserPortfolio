@@ -43,7 +43,7 @@ export default function Home() {
        
         <div className="max-w-6xl mx-auto">
           <h2 className="font-serif text-4xl md:text-5xl text-center mb-16" data-aos="fade-up">
-            Sobre mí
+            Sobre <span className="italic">mí</span>
           </h2>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6" data-aos="fade-right">
