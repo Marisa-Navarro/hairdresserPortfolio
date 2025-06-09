@@ -30,8 +30,8 @@ export function ContactForm() {
     await new Promise((resolve) => setTimeout(resolve, 1000))
 
     toast({
-      title: "Message sent!",
-      description: "Thank you for your message. I'll get back to you soon.",
+      title: "¡Mensaje enviado!",
+      description: "Gracias por tu mensaje. Me pondré en contacto contigo pronto.",
     })
 
     setFormData({
@@ -47,7 +47,7 @@ export function ContactForm() {
       <div>
         <Input
           name="name"
-          placeholder="Your Name"
+          placeholder="Tu Nombre"
           value={formData.name}
           onChange={handleChange}
           required
@@ -58,7 +58,7 @@ export function ContactForm() {
         <Input
           name="email"
           type="email"
-          placeholder="Your Email"
+          placeholder="Tu Email"
           value={formData.email}
           onChange={handleChange}
           required
@@ -68,7 +68,7 @@ export function ContactForm() {
       <div>
         <Textarea
           name="message"
-          placeholder="Your Message"
+          placeholder="Tu Mensaje"
           value={formData.message}
           onChange={handleChange}
           required
@@ -76,7 +76,7 @@ export function ContactForm() {
         />
       </div>
       <Button type="submit" className="w-full bg-gray-950 hover:bg-teal-900" disabled={isSubmitting}>
-        {isSubmitting ? "Sending..." : "Send Message"}
+        {isSubmitting ? "Enviando..." : "Enviar Mensaje"}
       </Button>
     </form>
   )

@@ -60,16 +60,16 @@ export function Navbar() {
             <SheetContent>
               <nav className="flex flex-col gap-4 mt-8">
                 <Link href="/" className="text-lg font-medium py-2">
-                  Home
+                  Inicio
                 </Link>
                 <Link href="#about" className="text-lg font-medium py-2">
-                  About Me
+                  Sobre Mí
                 </Link>
                 <Link href="#portfolio" className="text-lg font-medium py-2">
-                  Portfolio
+                  Portafolio
                 </Link>
                 <Link href="#contact" className="text-lg font-medium py-2">
-                  Contact
+                  Contacto
                 </Link>
                 {/* <Link href="/admin" className="text-lg font-medium py-2">
                   Admin
@@ -85,7 +85,7 @@ export function Navbar() {
                 isScrolled ? "text-teal-950" : "text-white"
               }`}
             >
-              Home
+              Inicio
             </Link>
             <Link
               href="#about"
@@ -93,7 +93,7 @@ export function Navbar() {
                 isScrolled ? "text-teal-950" : "text-white"
               }`}
             >
-              About
+              Sobre Mí
             </Link>
             <Link
               href="#portfolio"
@@ -101,7 +101,7 @@ export function Navbar() {
                 isScrolled ? "text-teal-950" : "text-white"
               }`}
             >
-              Portfolio
+              Portafolio
             </Link>
             <Link
               href="#contact"
@@ -109,7 +109,7 @@ export function Navbar() {
                 isScrolled ? "text-teal-950" : "text-white"
               }`}
             >
-              Contact
+              Contacto
             </Link>
             {/* <Link href="/admin">
               <Button

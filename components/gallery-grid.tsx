@@ -52,40 +52,50 @@ export function GalleryGrid({ category }: GalleryGridProps) {
   return (
     <>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {galleryItems.map((item) => (
-          <div
-            key={item.id}
-            className="relative group cursor-pointer rounded-lg overflow-hidden"
-            onClick={() => setSelectedItem(item)}
-          >
-            <div className="aspect-[3/4] relative">
-              {item.type === 'video' ? (
-                <>
-                  <video
+        {loading ? (
+          <div className="text-center py-12">
+            <p className="text-gray-500">Cargando elementos...</p>
+          </div>
+        ) : galleryItems.length === 0 ? (
+          <div className="text-center py-12">
+            <p className="text-gray-500">No hay elementos en el portafolio</p>
+          </div>
+        ) : (
+          galleryItems.map((item) => (
+            <div
+              key={item.id}
+              className="relative group cursor-pointer rounded-lg overflow-hidden"
+              onClick={() => setSelectedItem(item)}
+            >
+              <div className="aspect-[3/4] relative">
+                {item.type === 'video' ? (
+                  <>
+                    <video
+                      src={item.imgurl}
+                      className="absolute inset-0 w-full h-full object-cover"
+                      preload="metadata"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/30">
+                      <Play className="w-12 h-12 text-white" />
+                    </div>
+                  </>
+                ) : (
+                  <Image
                     src={item.imgurl}
-                    className="absolute inset-0 w-full h-full object-cover"
-                    preload="metadata"
+                    alt={`${item.category} ${item.type}`}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 flex items-center justify-center bg-black/30">
-                    <Play className="w-12 h-12 text-white" />
-                  </div>
-                </>
-              ) : (
-                <Image
-                  src={item.imgurl}
-                  alt={`${item.category} ${item.type}`}
-                  fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-              )}
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-              <div className="p-4 text-white">
-                <p className="text-sm capitalize">{item.category}</p>
+                )}
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                <div className="p-4 text-white">
+                  <p className="text-sm capitalize">{item.category}</p>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))
+        )}
       </div>
 
       <Dialog open={!!selectedItem} onOpenChange={() => setSelectedItem(null)}>

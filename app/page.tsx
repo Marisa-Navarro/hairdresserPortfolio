@@ -55,23 +55,28 @@ export default function Home() {
       <section className="py-24 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <h2 className="font-serif text-4xl md:text-5xl text-center mb-16" data-aos="fade-up">
-            About <span className="italic">Me</span>
+            Sobre <span className="italic">Mí</span>
           </h2>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6" data-aos="fade-right">
               <p className="text-lg leading-relaxed text-gray-700">
-                I've been training for a well-known company, GHD. I'm a professional hairdresser and currently I'm
-                applying to become a hairdressing teacher. I don't have a business, but I want to include my experience
-                and videos in my portfolio, which I need to present at my upcoming exam.
+                He estado formando para una empresa reconocida, GHD. Soy peluquera profesional y actualmente estoy
+                aplicando para convertirme en profesora de peluquería. No tengo un negocio propio, pero quiero incluir
+                mi experiencia y vídeos en mi portafolio, que necesito presentar en mi próximo examen.
               </p>
               <p className="text-lg leading-relaxed text-gray-700">
-                With over 5 years of experience in the industry, I've developed expertise in various cutting and
-                coloring techniques, specializing in creating personalized styles that enhance each client's unique
-                features.
+                Con más de 5 años de experiencia en la industria, he desarrollado experiencia en varias técnicas de
+                corte y coloración, especializándome en crear estilos personalizados que realzan las características
+                únicas de cada cliente.
               </p>
-              <Button className="bg-gray-950 hover:bg-teal-900 text-white">
-                <Link href="#contact">Get in Touch</Link>
-              </Button>
+              
+              <p className="text-lg leading-relaxed text-gray-700">
+                Soy Formadora Profesional de peluquería y, a través de la enseñanza, puedo aportar lo mejor de mí con experiencia e ilusión. En mi trayectoria, he tenido la oportunidad de especializarme y compartir conocimientos con profesionales del estilismo, algo que me ha enriquecido profundamente.
+
+Me motiva seguir aprendiendo y avanzando en este mundo de la enseñanza, donde cada día representa una nueva oportunidad para descubrir, enseñar e inspirar.
+
+Con el espacio que he dejado en medio de cada párrafo
+              </p>
             </div>
             <div className="grid grid-cols-2 gap-4" data-aos="fade-left">
               <Image
@@ -97,12 +102,12 @@ export default function Home() {
       <section id="portfolio" className="py-24 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <h2 className="font-serif text-4xl md:text-5xl text-center mb-16" data-aos="fade-up">
-            The <span className="italic">Portfolio</span>
+            Mi <span className="italic">Portafolio</span>
           </h2>
           <Tabs defaultValue="Formaciones y Seminarios" className="w-full">
             <TabsList className="grid grid-cols-4 max-w-md mx-auto mb-[170px] bg-transparent gap-32" data-aos="fade-up" data-aos-delay="200">
               <TabsTrigger value="Formaciones y Seminarios" className="flex flex-col items-center data-[state=active]:bg-transparent">
-                <div className="w-32 h-32 rounded-full overflow-hidden mb-2 border-2 border-transparent transition-colors data-[state=active]:border-teal-600">
+                <div className="w-32 h-32 rounded-full overflow-hidden mb-2 border-2 border-transparent transition-all duration-300 hover:scale-110 data-[state=active]:border-teal-600">
                   <Image
                     src="https://res.cloudinary.com/deq6qm96r/image/upload/v1749404018/1_1_ycnu44.jpg"
                     alt="All services"
@@ -115,7 +120,7 @@ export default function Home() {
               </TabsTrigger>
 
               <TabsTrigger value="Directos" className="flex flex-col items-center data-[state=active]:bg-transparent">
-                <div className="w-32 h-32 rounded-full overflow-hidden mb-2 border-2 border-transparent transition-colors data-[state=active]:border-teal-600">
+                <div className="w-32 h-32 rounded-full overflow-hidden mb-2 border-2 border-transparent transition-all duration-300 hover:scale-110 data-[state=active]:border-teal-600">
                   <Image
                     src="https://res.cloudinary.com/deq6qm96r/image/upload/v1749399190/2_t0noqf.jpg"
                     alt="Haircuts"
@@ -128,7 +133,7 @@ export default function Home() {
               </TabsTrigger>
 
               <TabsTrigger value="Vídeos educativos" className="flex flex-col items-center data-[state=active]:bg-transparent">
-                <div className="w-32 h-32 rounded-full overflow-hidden mb-2 border-2 border-transparent transition-colors data-[state=active]:border-teal-600">
+                <div className="w-32 h-32 rounded-full overflow-hidden mb-2 border-2 border-transparent transition-all duration-300 hover:scale-110 data-[state=active]:border-teal-600">
                   <Image
                     src="https://res.cloudinary.com/deq6qm96r/image/upload/v1749399190/3_vmpyf2.jpg"
                     alt="Coloring"
@@ -137,11 +142,11 @@ export default function Home() {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <span className="text-sm font-medium">Vídeos educativos</span>
+                <span className="text-sm font-medium">Vídeos Educativos</span>
               </TabsTrigger>
 
               <TabsTrigger value="Eventos" className="flex flex-col items-center data-[state=active]:bg-transparent">
-                <div className="w-32 h-32 rounded-full overflow-hidden mb-2 border-2 border-transparent transition-colors data-[state=active]:border-teal-600">
+                <div className="w-32 h-32 rounded-full overflow-hidden mb-2 border-2 border-transparent transition-all duration-300 hover:scale-110 data-[state=active]:border-teal-600">
                   <Image
                     src="https://res.cloudinary.com/deq6qm96r/image/upload/v1749404021/4_1_o0pwxy.jpg"
                     alt="Styling"
@@ -176,19 +181,19 @@ export default function Home() {
       <section id="contact" className="py-24 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <h2 className="font-serif text-4xl md:text-5xl text-center mb-16" data-aos="fade-up">
-            Connect <span className="italic">with</span> Me
+            Conecta <span className="italic">Conmigo</span>
           </h2>
           <div className="grid md:grid-cols-2 gap-12">
             <div data-aos="fade-right">
-              <h3 className="font-serif text-2xl mb-6">Social Media</h3>
+              <h3 className="font-serif text-2xl mb-6">Redes Sociales</h3>
               <p className="text-gray-700 mb-8">
-                Follow me on social media to see my latest work, behind-the-scenes content, and hairstyling tips.
+                Sígueme en redes sociales para ver mis últimos trabajos, contenido entre bastidores y consejos de peluquería.
               </p>
               <SocialLinks />
             </div>
             <div data-aos="fade-left">
               <Image
-                src="https://res.cloudinary.com/deq6qm96r/image/upload/v1749379713/IMG_7825_lgpgix.jpg"
+                src="https://res.cloudinary.com/deq6qm96r/image/upload/v1749455161/IMG_8330_sjohsk.jpg"
                 alt="Hairdresser at work"
                 width={600}
                 height={400}
@@ -203,7 +208,8 @@ export default function Home() {
       <footer className="bg-gray-950 text-white py-12 px-4">
         <div className="max-w-6xl mx-auto" data-aos="fade-up">
           <div className="grid md:grid-cols-3 gap-8">
-            <div>
+            <div></div>
+            <div className="flex flex-col items-center text-center">
               <Image
                 src="https://res.cloudinary.com/deq6qm96r/image/upload/v1749101918/Marisa_Navarro_Logo_white_lcxu0y.png"
                 alt="Marisa Navarro Logo"
@@ -211,47 +217,14 @@ export default function Home() {
                 height={60}
                 className="mb-4"
               />
-              <p className="text-gray-400 mt-4">
-                Professional hairdresser and educator passionate about creating beautiful styles and sharing knowledge.
+              <p className="text-gray-400 mt-4 max-w-md">
+                Formadora Profesional y Educadora de Peluquería
               </p>
             </div>
-            <div>
-              <h3 className="font-serif text-xl mb-4">Navigation</h3>
-              <ul className="space-y-2">
-                <li>
-                  <Link href="/" className="hover:underline">
-                    Home
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#about" className="hover:underline">
-                    About
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#portfolio" className="hover:underline">
-                    Portfolio
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#contact" className="hover:underline">
-                    Contact
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-serif text-xl mb-4">Services</h3>
-              <ul className="space-y-2">
-                <li>Haircuts & Styling</li>
-                <li>Color & Highlights</li>
-                <li>Hair Treatments</li>
-                <li>Bridal & Special Events</li>
-              </ul>
-            </div>
+            <div></div>
           </div>
           <div className="border-t border-teal-800 mt-8 pt-8 text-center">
-            <p>&copy; {new Date().getFullYear()} Marisa Navarro. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Marisa Navarro. Todos los derechos reservados.</p>
           </div>
         </div>
       </footer>

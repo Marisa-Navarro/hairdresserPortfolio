@@ -207,8 +207,8 @@ export default function AdminPage() {
       <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
         <Card className="w-full max-w-md">
           <CardHeader>
-            <CardTitle>Admin Login</CardTitle>
-            <CardDescription>Login to manage your portfolio content</CardDescription>
+            <CardTitle>Acceso Administrador</CardTitle>
+            <CardDescription>Inicia sesión para gestionar tu contenido</CardDescription>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleLogin} className="space-y-4">
@@ -247,26 +247,26 @@ export default function AdminPage() {
 
         <Tabs defaultValue="upload" className="w-full">
           <TabsList className="grid w-full max-w-md grid-cols-2">
-            <TabsTrigger value="upload">Upload Content</TabsTrigger>
-            <TabsTrigger value="manage">Manage Content</TabsTrigger>
+            <TabsTrigger value="upload">Subir Contenido</TabsTrigger>
+            <TabsTrigger value="manage">Gestionar Contenido</TabsTrigger>
           </TabsList>
 
           <TabsContent value="upload" className="mt-6">
             <Card>
               <CardHeader>
-                <CardTitle>Upload to Portfolio</CardTitle>
-                <CardDescription>Add new images or videos to your portfolio gallery</CardDescription>
+                <CardTitle>Subir al Portafolio</CardTitle>
+                <CardDescription>Añade nuevas imágenes o vídeos a tu galería</CardDescription>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleUpload} className="space-y-6">
                   <div className="space-y-2">
-                    <Label htmlFor="title">Title</Label>
+                    <Label htmlFor="title">Título</Label>
                     <Input id="title" name="title" value={uploadData.title} onChange={handleUploadChange} required />
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <Label htmlFor="category">Category</Label>
+                      <Label htmlFor="category">Categoría</Label>
                       <Select
                         value={uploadData.category}
                         onValueChange={(value) => handleSelectChange("category", value)}
@@ -284,21 +284,21 @@ export default function AdminPage() {
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="type">Content Type</Label>
+                      <Label htmlFor="type">Tipo de Contenido</Label>
                       <Select value={uploadData.type} onValueChange={(value) => handleSelectChange("type", value)}>
                         <SelectTrigger>
                           <SelectValue placeholder="Select type" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="image">Image</SelectItem>
-                          <SelectItem value="video">Video</SelectItem>
+                          <SelectItem value="image">Imagen</SelectItem>
+                          <SelectItem value="video">Vídeo</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="description">Description</Label>
+                    <Label htmlFor="description">Descripción</Label>
                     <Textarea
                       id="description"
                       name="description"
@@ -309,7 +309,7 @@ export default function AdminPage() {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="file">Upload File</Label>
+                    <Label htmlFor="file">Subir Archivo</Label>
                     <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center">
                       <Input
                         id="file"
@@ -324,7 +324,9 @@ export default function AdminPage() {
                         ) : (
                           <Film className="h-12 w-12 text-gray-400 mb-2" />
                         )}
-                        <span className="text-sm text-gray-500">{file ? file.name : "Click to select a file"}</span>
+                        <span className="text-sm text-gray-500">
+                          {file ? file.name : "Haz clic para seleccionar un archivo"}
+                        </span>
                       </Label>
                     </div>
                   </div>
@@ -351,8 +353,8 @@ export default function AdminPage() {
           <TabsContent value="manage" className="mt-6">
             <Card>
               <CardHeader>
-                <CardTitle>Manage Portfolio</CardTitle>
-                <CardDescription>View, edit, or delete your portfolio content</CardDescription>
+                <CardTitle>Gestionar Portafolio</CardTitle>
+                <CardDescription>Ver, editar o eliminar tu contenido</CardDescription>
               </CardHeader>
               <CardContent>
                 {isLoading ? (
@@ -393,18 +395,18 @@ export default function AdminPage() {
                               </AlertDialogTrigger>
                               <AlertDialogContent>
                                 <AlertDialogHeader>
-                                  <AlertDialogTitle>Are you sure?</AlertDialogTitle>
+                                  <AlertDialogTitle>¿Estás seguro?</AlertDialogTitle>
                                   <AlertDialogDescription>
-                                    This action cannot be undone. This will permanently delete this item from your portfolio.
+                                    Esta acción no se puede deshacer. Se eliminará permanentemente este elemento de tu portafolio.
                                   </AlertDialogDescription>
                                 </AlertDialogHeader>
                                 <AlertDialogFooter>
-                                  <AlertDialogCancel>Cancel</AlertDialogCancel>
+                                  <AlertDialogCancel>Cancelar</AlertDialogCancel>
                                   <AlertDialogAction
                                     onClick={() => handleDelete(item.id)}
                                     className="bg-red-600 hover:bg-red-700"
                                   >
-                                    Delete
+                                    Eliminar
                                   </AlertDialogAction>
                                 </AlertDialogFooter>
                               </AlertDialogContent>
