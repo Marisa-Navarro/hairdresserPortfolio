@@ -16,7 +16,7 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: "Hairdresser Portfolio",
+  title: "Marisa Navarro",
   description: "Professional hairdresser portfolio showcasing expertise in haircuts, coloring, and styling",
     generator: 'v0.dev'
 }
