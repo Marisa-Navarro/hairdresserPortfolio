@@ -94,7 +94,7 @@ export default function AdminPage() {
       const fileExt = file.name.split('.').pop()
       const uniqueId = Date.now().toString()
       const fileName = `${uniqueId}.${fileExt}`
-      const filePath = `${uploadData.type}s/${uploadData.category}/${fileName}`
+      const filePath = `${uploadData.category}/${fileName}`
 
       // Upload file to Supabase Storage
       const { error: uploadError, data } = await supabase.storage
