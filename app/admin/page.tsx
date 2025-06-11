@@ -15,11 +15,13 @@ import { Upload, ImageIcon, Film, Trash2, Edit, X } from "lucide-react"
 import { supabase } from "@/components/config"
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/components/ui/alert-dialog"
 
+// Update the PortfolioItem interface first
 interface PortfolioItem {
   id: number
   imgurl: string
   category: string
   type: 'image' | 'video'
+  title: string
   created_at: string
 }
 
@@ -76,6 +78,7 @@ export default function AdminPage() {
     }
   }
 
+  // Then modify the handleUpload function
   const handleUpload = async (e: React.FormEvent) => {
     e.preventDefault()
     if (!file) {
@@ -118,7 +121,8 @@ export default function AdminPage() {
           {
             imgurl: publicUrl,
             category: uploadData.category,
-            type: uploadData.type, // Add type field
+            type: uploadData.type,
+            title: uploadData.title, // Add title field
             created_at: new Date().toISOString()
           },
         ])

@@ -11,6 +11,7 @@ interface GalleryItem {
   imgurl: string
   category: string
   type: 'image' | 'video'
+  title: string
   created_at: string
 }
 
@@ -39,6 +40,7 @@ export function GalleryGrid({ category }: GalleryGridProps) {
 
         if (error) throw error
         setGalleryItems(data || [])
+   
       } catch (error) {
         console.error('Error fetching gallery items:', error)
       } finally {
@@ -90,7 +92,7 @@ export function GalleryGrid({ category }: GalleryGridProps) {
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                 <div className="p-4 text-white">
-                  <p className="text-sm capitalize">{item.category}</p>
+                  <p className="text-sm capitalize">{item.title}</p>
                 </div>
               </div>
             </div>
@@ -111,13 +113,16 @@ export function GalleryGrid({ category }: GalleryGridProps) {
             ) : (
               <Image
                 src={selectedItem?.imgurl || ""}
-                alt={`${selectedItem?.category} image`}
+                alt={selectedItem?.title || `${selectedItem?.category} image`}
                 fill
                 className="object-contain"
               />
             )}
           </div>
           <div className="mt-2">
+            {selectedItem?.title && (
+              <h3 className="text-lg font-medium mb-1">{selectedItem.title}</h3>
+            )}
             <p className="text-gray-500 capitalize">{selectedItem?.category}</p>
           </div>
         </DialogContent>
