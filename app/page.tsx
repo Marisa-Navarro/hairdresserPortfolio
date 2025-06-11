@@ -113,7 +113,7 @@ Me motiva seguir aprendiendo y avanzando en este mundo de la enseñanza, donde c
                   <span className="text-xs md:text-sm font-medium">Directos</span>
                 </TabsTrigger>
 
-                <TabsTrigger value="Vídeos educativos" className="flex flex-col items-center data-[state=active]:bg-transparent">
+                <TabsTrigger value="Material educativo" className="flex flex-col items-center data-[state=active]:bg-transparent">
                   <div className="w-12 h-12 md:w-32 md:h-32 rounded-full overflow-hidden mb-2 border-2 border-transparent transition-all duration-300 hover:scale-110 data-[state=active]:border-teal-600">
                     <Image
                       src="https://res.cloudinary.com/deq6qm96r/image/upload/v1749399190/3_vmpyf2.jpg"
@@ -123,7 +123,7 @@ Me motiva seguir aprendiendo y avanzando en este mundo de la enseñanza, donde c
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <span className="text-xs md:text-sm font-medium">Vídeos Educativos</span>
+                  <span className="text-xs md:text-sm font-medium">Material educativo</span>
                 </TabsTrigger>
 
                 <TabsTrigger value="Eventos" className="flex flex-col items-center data-[state=active]:bg-transparent">
@@ -147,8 +147,8 @@ Me motiva seguir aprendiendo y avanzando en este mundo de la enseñanza, donde c
             <TabsContent value="Directos">
               <GalleryGrid category="Directos" />
             </TabsContent>
-            <TabsContent value="Vídeos educativos">
-              <GalleryGrid category="Vídeos educativos" />
+            <TabsContent value="Material educativo">
+              <GalleryGrid category="Material educativo" />
             </TabsContent>
             <TabsContent value="Eventos">
               <GalleryGrid category="Eventos" />

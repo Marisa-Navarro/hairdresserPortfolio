@@ -97,7 +97,7 @@ export default function AdminPage() {
       const fileExt = file.name.split('.').pop()
       const uniqueId = Date.now().toString()
       const fileName = `${uniqueId}.${fileExt}`
-      const filePath = `${uploadData.type}s/${uploadData.category}/${fileName}`
+      const filePath = `${uploadData.category}/${fileName}`
 
       // Upload file to Supabase Storage
       const { error: uploadError, data } = await supabase.storage
@@ -281,7 +281,7 @@ export default function AdminPage() {
                         <SelectContent>
                           <SelectItem value="Formaciones y Seminarios">Formaciones y Seminarios</SelectItem>
                           <SelectItem value="Directos">Directos</SelectItem>
-                          <SelectItem value="Vídeos educativos"> Vídeos educativos</SelectItem>
+                          <SelectItem value="Material educativo"> Material educativo</SelectItem>
                           <SelectItem value="Eventos"> Eventos</SelectItem>
                         </SelectContent>
                       </Select>
